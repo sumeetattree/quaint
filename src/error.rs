@@ -77,8 +77,8 @@ impl From<mobc::Error<Error>> for Error {
 }
 
 #[cfg(any(feature = "postgresql", feature = "mysql"))]
-impl From<tokio::time::Elapsed> for Error {
-    fn from(_: tokio::time::Elapsed) -> Self {
+impl From<tokio::time::error::Elapsed> for Error {
+    fn from(_: tokio::time::error::Elapsed) -> Self {
         Self::Timeout
     }
 }
